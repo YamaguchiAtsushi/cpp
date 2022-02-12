@@ -2,4 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 
 project(test_cmake CXX)
 
-add_executable(class_test src/main.cpp)          
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+add_executable(class_sample src/main.cpp src/sample_class.cpp)          

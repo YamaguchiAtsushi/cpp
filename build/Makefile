@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named class_test
+# Target rules for targets named class_sample
 
 # Build rule for target.
-class_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 class_test
-.PHONY : class_test
+class_sample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 class_sample
+.PHONY : class_sample
 
 # fast build rule for target.
-class_test/fast:
-	$(MAKE) -f CMakeFiles/class_test.dir/build.make CMakeFiles/class_test.dir/build
-.PHONY : class_test/fast
+class_sample/fast:
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/build
+.PHONY : class_sample/fast
 
 src/main.o: src/main.cpp.o
 
@@ -129,7 +129,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/class_test.dir/build.make CMakeFiles/class_test.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -138,7 +138,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/class_test.dir/build.make CMakeFiles/class_test.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -147,8 +147,35 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/class_test.dir/build.make CMakeFiles/class_test.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/sample_class.o: src/sample_class.cpp.o
+
+.PHONY : src/sample_class.o
+
+# target to build an object file
+src/sample_class.cpp.o:
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/sample_class.cpp.o
+.PHONY : src/sample_class.cpp.o
+
+src/sample_class.i: src/sample_class.cpp.i
+
+.PHONY : src/sample_class.i
+
+# target to preprocess a source file
+src/sample_class.cpp.i:
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/sample_class.cpp.i
+.PHONY : src/sample_class.cpp.i
+
+src/sample_class.s: src/sample_class.cpp.s
+
+.PHONY : src/sample_class.s
+
+# target to generate assembly for a file
+src/sample_class.cpp.s:
+	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/sample_class.cpp.s
+.PHONY : src/sample_class.cpp.s
 
 # Help Target
 help:
@@ -157,11 +184,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... class_test"
+	@echo "... class_sample"
 	@echo "... edit_cache"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sample_class.o"
+	@echo "... src/sample_class.i"
+	@echo "... src/sample_class.s"
 .PHONY : help
 
 
