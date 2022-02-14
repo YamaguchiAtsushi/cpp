@@ -97,6 +97,43 @@ clean: CMakeFiles/class_sample.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/file_test.dir
+
+# All Build rule for target.
+CMakeFiles/file_test.dir/all:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/depend
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yamaguchi/cpp/build/CMakeFiles --progress-num=4,5 "Built target file_test"
+.PHONY : CMakeFiles/file_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/file_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/file_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/cpp/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/file_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/file_test.dir/rule
+
+# Convenience name for target.
+file_test: CMakeFiles/file_test.dir/rule
+
+.PHONY : file_test
+
+# clean rule for target.
+CMakeFiles/file_test.dir/clean:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/clean
+.PHONY : CMakeFiles/file_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/file_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

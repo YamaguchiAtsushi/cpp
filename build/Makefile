@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/yamaguchi/cpp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,6 +122,46 @@ class_sample: cmake_check_build_system
 class_sample/fast:
 	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/build
 .PHONY : class_sample/fast
+
+#=============================================================================
+# Target rules for targets named file_test
+
+# Build rule for target.
+file_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 file_test
+.PHONY : file_test
+
+# fast build rule for target.
+file_test/fast:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/build
+.PHONY : file_test/fast
+
+src/file_test.o: src/file_test.cpp.o
+
+.PHONY : src/file_test.o
+
+# target to build an object file
+src/file_test.cpp.o:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/src/file_test.cpp.o
+.PHONY : src/file_test.cpp.o
+
+src/file_test.i: src/file_test.cpp.i
+
+.PHONY : src/file_test.i
+
+# target to preprocess a source file
+src/file_test.cpp.i:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/src/file_test.cpp.i
+.PHONY : src/file_test.cpp.i
+
+src/file_test.s: src/file_test.cpp.s
+
+.PHONY : src/file_test.s
+
+# target to generate assembly for a file
+src/file_test.cpp.s:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/src/file_test.cpp.s
+.PHONY : src/file_test.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -183,9 +223,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... class_sample"
-	@echo "... edit_cache"
+	@echo "... file_test"
+	@echo "... src/file_test.o"
+	@echo "... src/file_test.i"
+	@echo "... src/file_test.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

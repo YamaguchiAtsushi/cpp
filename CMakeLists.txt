@@ -7,3 +7,5 @@ include_directories(
 )
 
 add_executable(class_sample src/main.cpp src/sample_class.cpp)          
+
+add_executable(file_test src/file_test.cpp)          
