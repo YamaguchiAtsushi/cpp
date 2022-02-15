@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named plot_test
+
+# Build rule for target.
+plot_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plot_test
+.PHONY : plot_test
+
+# fast build rule for target.
+plot_test/fast:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/build
+.PHONY : plot_test/fast
+
+#=============================================================================
 # Target rules for targets named class_sample
 
 # Build rule for target.
@@ -190,6 +203,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/class_sample.dir/build.make CMakeFiles/class_sample.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/plot_test.o: src/plot_test.cpp.o
+
+.PHONY : src/plot_test.o
+
+# target to build an object file
+src/plot_test.cpp.o:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/src/plot_test.cpp.o
+.PHONY : src/plot_test.cpp.o
+
+src/plot_test.i: src/plot_test.cpp.i
+
+.PHONY : src/plot_test.i
+
+# target to preprocess a source file
+src/plot_test.cpp.i:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/src/plot_test.cpp.i
+.PHONY : src/plot_test.cpp.i
+
+src/plot_test.s: src/plot_test.cpp.s
+
+.PHONY : src/plot_test.s
+
+# target to generate assembly for a file
+src/plot_test.cpp.s:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/src/plot_test.cpp.s
+.PHONY : src/plot_test.cpp.s
+
 src/sample_class.o: src/sample_class.cpp.o
 
 .PHONY : src/sample_class.o
@@ -224,6 +264,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... plot_test"
 	@echo "... rebuild_cache"
 	@echo "... class_sample"
 	@echo "... file_test"
@@ -233,6 +274,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/plot_test.o"
+	@echo "... src/plot_test.i"
+	@echo "... src/plot_test.s"
 	@echo "... src/sample_class.o"
 	@echo "... src/sample_class.i"
 	@echo "... src/sample_class.s"

@@ -1,4 +1,5 @@
 /home/yamaguchi/cpp/build/CMakeFiles/edit_cache.dir
+/home/yamaguchi/cpp/build/CMakeFiles/plot_test.dir
 /home/yamaguchi/cpp/build/CMakeFiles/rebuild_cache.dir
 /home/yamaguchi/cpp/build/CMakeFiles/class_sample.dir
 /home/yamaguchi/cpp/build/CMakeFiles/file_test.dir

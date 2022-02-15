@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /home/yamaguchi/cpp
 CMAKE_BINARY_DIR = /home/yamaguchi/cpp/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/plot_test.dir
+
+# All Build rule for target.
+CMakeFiles/plot_test.dir/all:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/depend
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yamaguchi/cpp/build/CMakeFiles --progress-num=6,7 "Built target plot_test"
+.PHONY : CMakeFiles/plot_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/plot_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/plot_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/cpp/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/plot_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/plot_test.dir/rule
+
+# Convenience name for target.
+plot_test: CMakeFiles/plot_test.dir/rule
+
+.PHONY : plot_test
+
+# clean rule for target.
+CMakeFiles/plot_test.dir/clean:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/clean
+.PHONY : CMakeFiles/plot_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/plot_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/class_sample.dir
 
 # All Build rule for target.

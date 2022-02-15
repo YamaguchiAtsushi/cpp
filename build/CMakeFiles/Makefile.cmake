@@ -38,6 +38,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/plot_test.dir/DependInfo.cmake"
   "CMakeFiles/class_sample.dir/DependInfo.cmake"
   "CMakeFiles/file_test.dir/DependInfo.cmake"
   )
