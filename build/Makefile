@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named animation_test
+
+# Build rule for target.
+animation_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 animation_test
+.PHONY : animation_test
+
+# fast build rule for target.
+animation_test/fast:
+	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/build
+.PHONY : animation_test/fast
+
+#=============================================================================
 # Target rules for targets named plot_test
 
 # Build rule for target.
@@ -148,6 +161,33 @@ file_test: cmake_check_build_system
 file_test/fast:
 	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/build
 .PHONY : file_test/fast
+
+src/animation_test.o: src/animation_test.cpp.o
+
+.PHONY : src/animation_test.o
+
+# target to build an object file
+src/animation_test.cpp.o:
+	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/src/animation_test.cpp.o
+.PHONY : src/animation_test.cpp.o
+
+src/animation_test.i: src/animation_test.cpp.i
+
+.PHONY : src/animation_test.i
+
+# target to preprocess a source file
+src/animation_test.cpp.i:
+	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/src/animation_test.cpp.i
+.PHONY : src/animation_test.cpp.i
+
+src/animation_test.s: src/animation_test.cpp.s
+
+.PHONY : src/animation_test.s
+
+# target to generate assembly for a file
+src/animation_test.cpp.s:
+	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/src/animation_test.cpp.s
+.PHONY : src/animation_test.cpp.s
 
 src/file_test.o: src/file_test.cpp.o
 
@@ -264,10 +304,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... animation_test"
 	@echo "... plot_test"
 	@echo "... rebuild_cache"
 	@echo "... class_sample"
 	@echo "... file_test"
+	@echo "... src/animation_test.o"
+	@echo "... src/animation_test.i"
+	@echo "... src/animation_test.s"
 	@echo "... src/file_test.o"
 	@echo "... src/file_test.i"
 	@echo "... src/file_test.s"
