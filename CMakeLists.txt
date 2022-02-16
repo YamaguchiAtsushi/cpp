@@ -14,3 +14,4 @@ add_executable(plot_test src/plot_test.cpp)
 
 add_executable(animation_test src/animation_test.cpp)          
 
+add_executable(arguments src/arguments.cpp)          

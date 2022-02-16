@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/yamaguchi/cpp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,30 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named animation_test
+# Target rules for targets named file_test
 
 # Build rule for target.
-animation_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 animation_test
-.PHONY : animation_test
+file_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 file_test
+.PHONY : file_test
 
 # fast build rule for target.
-animation_test/fast:
-	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/build
-.PHONY : animation_test/fast
-
-#=============================================================================
-# Target rules for targets named plot_test
-
-# Build rule for target.
-plot_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 plot_test
-.PHONY : plot_test
-
-# fast build rule for target.
-plot_test/fast:
-	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/build
-.PHONY : plot_test/fast
+file_test/fast:
+	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/build
+.PHONY : file_test/fast
 
 #=============================================================================
 # Target rules for targets named class_sample
@@ -150,17 +137,43 @@ class_sample/fast:
 .PHONY : class_sample/fast
 
 #=============================================================================
-# Target rules for targets named file_test
+# Target rules for targets named plot_test
 
 # Build rule for target.
-file_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 file_test
-.PHONY : file_test
+plot_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plot_test
+.PHONY : plot_test
 
 # fast build rule for target.
-file_test/fast:
-	$(MAKE) -f CMakeFiles/file_test.dir/build.make CMakeFiles/file_test.dir/build
-.PHONY : file_test/fast
+plot_test/fast:
+	$(MAKE) -f CMakeFiles/plot_test.dir/build.make CMakeFiles/plot_test.dir/build
+.PHONY : plot_test/fast
+
+#=============================================================================
+# Target rules for targets named animation_test
+
+# Build rule for target.
+animation_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 animation_test
+.PHONY : animation_test
+
+# fast build rule for target.
+animation_test/fast:
+	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/build
+.PHONY : animation_test/fast
+
+#=============================================================================
+# Target rules for targets named arguments
+
+# Build rule for target.
+arguments: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 arguments
+.PHONY : arguments
+
+# fast build rule for target.
+arguments/fast:
+	$(MAKE) -f CMakeFiles/arguments.dir/build.make CMakeFiles/arguments.dir/build
+.PHONY : arguments/fast
 
 src/animation_test.o: src/animation_test.cpp.o
 
@@ -188,6 +201,33 @@ src/animation_test.s: src/animation_test.cpp.s
 src/animation_test.cpp.s:
 	$(MAKE) -f CMakeFiles/animation_test.dir/build.make CMakeFiles/animation_test.dir/src/animation_test.cpp.s
 .PHONY : src/animation_test.cpp.s
+
+src/arguments.o: src/arguments.cpp.o
+
+.PHONY : src/arguments.o
+
+# target to build an object file
+src/arguments.cpp.o:
+	$(MAKE) -f CMakeFiles/arguments.dir/build.make CMakeFiles/arguments.dir/src/arguments.cpp.o
+.PHONY : src/arguments.cpp.o
+
+src/arguments.i: src/arguments.cpp.i
+
+.PHONY : src/arguments.i
+
+# target to preprocess a source file
+src/arguments.cpp.i:
+	$(MAKE) -f CMakeFiles/arguments.dir/build.make CMakeFiles/arguments.dir/src/arguments.cpp.i
+.PHONY : src/arguments.cpp.i
+
+src/arguments.s: src/arguments.cpp.s
+
+.PHONY : src/arguments.s
+
+# target to generate assembly for a file
+src/arguments.cpp.s:
+	$(MAKE) -f CMakeFiles/arguments.dir/build.make CMakeFiles/arguments.dir/src/arguments.cpp.s
+.PHONY : src/arguments.cpp.s
 
 src/file_test.o: src/file_test.cpp.o
 
@@ -303,15 +343,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... animation_test"
-	@echo "... plot_test"
+	@echo "... file_test"
 	@echo "... rebuild_cache"
 	@echo "... class_sample"
-	@echo "... file_test"
+	@echo "... plot_test"
+	@echo "... animation_test"
+	@echo "... arguments"
+	@echo "... edit_cache"
 	@echo "... src/animation_test.o"
 	@echo "... src/animation_test.i"
 	@echo "... src/animation_test.s"
+	@echo "... src/arguments.o"
+	@echo "... src/arguments.i"
+	@echo "... src/arguments.s"
 	@echo "... src/file_test.o"
 	@echo "... src/file_test.i"
 	@echo "... src/file_test.s"
